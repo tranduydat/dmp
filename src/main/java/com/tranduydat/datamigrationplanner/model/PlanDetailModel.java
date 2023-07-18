@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * To store plan detail info
  *
  * @author Dat Tran (dattd6)
  * @version 1

@@ -1,9 +1,10 @@
 package com.tranduydat.datamigrationplanner.config;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
+ * To store all configs of this project
+ *
  * @author Dat Tran (dattd6)
  * @version 1
  * @since 2023/07/13
@@ -11,7 +12,20 @@ import lombok.Data;
 
 @Data
 public class Config {
-  private static Config instance;
+  private static volatile Config instance;
+  private String mssqlServerHost;
+  private int mssqlServerPort;
+  private String mssqlServerDb;
+  private String mssqlServerUsername;
+  private String mssqlServerPassword;
+  private String mssqlServerJdbcUri = String.format("jdbc:sqlserver://%s:%d;encrypt=true;trustServerCertificate=true;databaseName=%s",
+    mssqlServerHost, mssqlServerPort, mssqlServerDb);
+  // The max size of connection pool in HikariCP
+  private int cpMaxSize = 5;
+  // The min number of idle connections in HikariCP
+  private int cpMinIdle = 1;
+  // The file path to save plan
+  private String savePath;
 
   private Config() {
     // Private constructor to prevent direct instantiation
@@ -27,15 +41,4 @@ public class Config {
     }
     return instance;
   }
-
-  private String mssqlServerHost;
-  private int mssqlServerPort;
-  private String mssqlServerDb;
-  private String mssqlServerUsername;
-  private String mssqlServerPassword;
-  private String mssqlServerJdbcUri = String.format("jdbc:sqlserver://%s:%d;encrypt=true;trustServerCertificate=true;databaseName=%s",
-    mssqlServerHost, mssqlServerPort, mssqlServerDb);
-  private int cpMaxSize = 5;
-  private int cpMinIdle = 1;
-  private String savePath;
 }

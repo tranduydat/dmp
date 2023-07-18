@@ -8,7 +8,8 @@ import lombok.Setter;
 import java.util.Map;
 
 /**
- * DbModel -> SchemaModel -> TableModel
+ * To store database info
+ * DbModel -> TableModel
  *
  * @author Dat Tran (dattd6)
  * @version 1

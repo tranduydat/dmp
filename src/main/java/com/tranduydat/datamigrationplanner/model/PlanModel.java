@@ -5,6 +5,8 @@ import lombok.*;
 import java.util.List;
 
 /**
+ * To store Plan info
+ * A plan can have multiple plan details
  *
  * @author Dat Tran (dattd6)
  * @version 1

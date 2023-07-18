@@ -3,7 +3,8 @@ package com.tranduydat.datamigrationplanner.model;
 import lombok.*;
 
 /**
- * DbModel -> SchemaModel -> TableModel
+ * To store schema and table info
+ * DbModel -> TableModel
  *
  * @author Dat Tran (dattd6)
  * @version 1

@@ -1,4 +1,4 @@
-package com.tranduydat.datamigrationplanner.task.utils;
+package com.tranduydat.datamigrationplanner.utils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

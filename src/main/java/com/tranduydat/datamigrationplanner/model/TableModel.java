@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * DbModel -> SchemaModel -> TableModel
+ * To store table info
+ * DbModel -> TableModel
  *
  * @author Dat Tran (dattd6)
  * @version 1

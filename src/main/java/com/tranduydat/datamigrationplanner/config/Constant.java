@@ -20,9 +20,9 @@ public class Constant {
       "| |__| | | |  | | | |     \n" +
       "|_____/  |_|  |_| |_|   " +
       "\n---\n" +
-    "Data Migration Planner (DMP)\n" +
-    "Author: Dat Tran (dattd6)\n" +
-    "Version: v1\n";
+      "Data Migration Planner (DMP)\n" +
+      "Author: Dat Tran (dattd6)\n" +
+      "Version: v1\n";
 
   public static String LINEBAR = "======================================================================";
   public static String DELIMITER = "%";
