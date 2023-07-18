@@ -46,11 +46,20 @@ public class MakingPlanProcessor {
    * @return The unique column.
    */
   private String determineUniqueColumn(TableModel tableModel) {
+    // If Primary key is the only one key, it must be unique (not Composite primary key)
+    String uniqueColumn = "-1";
     if (tableModel.getPrimaryKeys().size() == 1) {
-      return tableModel.getPrimaryKeys().get(0);
+      uniqueColumn = tableModel.getPrimaryKeys().get(0);
     } else {
-      return compareColumnsByTotalRow(tableModel);
+      uniqueColumn = compareColumnsByTotalRow(tableModel);
     }
+
+    // Reverse keyword in Sqoop
+    if (uniqueColumn.equalsIgnoreCase("Key")) {
+      uniqueColumn = "-1";
+    }
+
+    return uniqueColumn;
   }
 
   /**
