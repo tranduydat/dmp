@@ -21,11 +21,7 @@ public class Main {
   public static void main(String[] args) {
     // Check if DS_PASSWORD environment variable is set
     // If it's not, then exit
-    String password = System.getenv("DMP_DS_PASSWORD");
-    if (password == null) {
-      logger.fatal("DMP_DS_PASSWORD environment variable is missing. Exiting the application.");
-      System.exit(1);
-    }
+    String password = checkAndGetPassword();
 
     // Initialize Log4j 2 with the configuration file
     System.setProperty("log4j.configurationFile", "log4j2.properties");
@@ -38,6 +34,15 @@ public class Main {
 
     // Run the making plan pipeline
     runMakingPlanPipeline();
+  }
+
+  private static String checkAndGetPassword() {
+    String password = System.getenv("DMP_DS_PASSWORD");
+    if (password == null) {
+      logger.fatal("DMP_DS_PASSWORD environment variable is missing. Exiting the application.");
+      System.exit(1);
+    }
+    return password;
   }
 
   /**
